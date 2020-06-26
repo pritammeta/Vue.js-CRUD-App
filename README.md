@@ -1,5 +1,5 @@
 # Adding User and data to firebase store.
-# vuejsfirebase
+# vuejsfirebase: Create and adding data is working.
 
 ## Project setup
 ```
