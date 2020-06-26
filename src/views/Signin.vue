@@ -1,12 +1,11 @@
 <template>
    
    <div class="login">
-       <h1>Vue.js Firebase App</h1>
-     <img alt="Vue logo" src="../assets/logo.png"><br> 
+      <img alt="Vue logo" src="../assets/logo.png"><br> 
      <h2>Welcome back !</h2>
-      <p> {{ message }}</p>
-      <input type="email" v-model="email"  placeholder="Email.."><br>
-     <input type="password" v-model="password"  placeholder="Password."><br>
+      <p style="color:red;">{{ message }}</p>
+      <input type="email" v-model="email"  placeholder="Email" class="form-control" @keyup.enter='login'><br>
+     <input type="password" v-model="password"  placeholder="Password" class="form-control" @keyup.enter='login'><br>
      <button v-on:click="login">Login</button>
       <p>Don't, have account? <router-link to=/signup> Sign up</router-link></p>
 
@@ -25,6 +24,8 @@ export default {
         };
     },
     methods: {
+
+
         login: function(){
                   this.message='Just wait...';
 
@@ -36,8 +37,8 @@ export default {
 
                   this.message='Logged in Successfully.';
                  // alert('Welcome Again!');
-                           //     this.$router.replace('home');
-
+                                this.$router.replace('Home');
+                          
                 },
                 (err) => {
                     alert('Opps,'+err.message);
@@ -52,11 +53,14 @@ export default {
 </script>>
 
 
- <style>
+ <style scoped>
 body {
   font-family: Arial;
 }
-
+img{
+    width: 70px;
+    left: 15px;
+ }
 input{
    padding: 12px 20px;
   margin: 8px 0;

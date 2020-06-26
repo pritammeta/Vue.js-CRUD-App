@@ -1,12 +1,7 @@
-import Vue from 'vue'
-import App from './App.vue'
-import router from './router'
-import firebase from 'firebase/app'
+import firebase from 'firebase'
 import 'firebase/firestore'
 
- Vue.config.productionTip = false
-let app ='';
-   // Your web app's Firebase configuration
+     // Your web app's Firebase configuration
   const firebaseConfig = {
     apiKey: "AIzaSyD16OnKaB9Gnvtss4SP6NCde3iWoqvKDb8",
     authDomain: "vuejs-20350.firebaseapp.com",
@@ -19,16 +14,9 @@ let app ='';
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
-  firebase.analytics();
-   firebase.auth().onAuthStateChanged(()=>{
-    if(!app){
-      app=new Vue({
-        router,
-        render: h => h(App)
-      }).$mount('#app')
-    }
-  });
-  export const db = firebase.firestore();
-
+   
   
+ const db = firebase.firestore();
+ db.settings({timestampsInSnapshots: true});
+ export default db;
 

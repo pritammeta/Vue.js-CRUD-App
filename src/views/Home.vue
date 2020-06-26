@@ -1,18 +1,36 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+     <button v-on:click="logout">Logout</button>
+   </div>
 </template>
 
 <script>
- 
-import HelloWorld from '@/components/HelloWorld.vue';
+import firebase from 'firebase'
+import {db} from '../main'
 export default {
-  name: 'Home',
-  components:{
-    HelloWorld
+  name:'home',
+  methods: {
+    logout: function(){
+   firebase
+    .auth()
+    .signOut()
+   .then(
+    ()=>
+     {
+    this.$router.replace('Signin');
+  });
+    }
+  },
+  retrievedata: function(){
+    db.collection("users").get().then((querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+        console.log(`${doc.id} => ${doc.data()}`);
+    });
+});
   }
-   
 };
+
+
+
+
 </script>
