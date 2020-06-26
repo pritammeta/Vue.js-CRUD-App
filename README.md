@@ -1,4 +1,4 @@
-# Currently,login and create user is working properly
+# Adding User and data to firebase store.
 # vuejsfirebase
 
 ## Project setup
