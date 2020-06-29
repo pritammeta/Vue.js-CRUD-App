@@ -1,6 +1,6 @@
 <template>
    
-   <div class="login">
+   <div class="container">
       <img alt="Vue logo" src="../assets/logo.png"><br> 
      <h2>Welcome back !</h2>
       <p style="color:red;">{{ message }}</p>
@@ -8,7 +8,7 @@
      <input type="password" v-model="password"  placeholder="Password" class="form-control" @keyup.enter='login'><br>
      <button v-on:click="login">Login</button>
       <p>Don't, have account? <router-link to=/signup> Sign up</router-link></p>
-
+<i class="fa fa-eye"></i>
  </div>
 </template>
 
@@ -24,8 +24,6 @@ export default {
         };
     },
     methods: {
-
-
         login: function(){
                   this.message='Just wait...';
 
@@ -69,7 +67,9 @@ input{
   box-sizing: border-box;
 }
 
- 
+ label{
+    text-align: left;
+ }
 button {
  background-color: #4DAB68;
   color: white;
@@ -87,6 +87,5 @@ div.login {
 }
 p{
     font-size: 12px;
-    cursor: pointer;
 }
 </style>

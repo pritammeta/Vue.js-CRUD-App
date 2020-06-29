@@ -28,7 +28,7 @@ let app ='';
       }).$mount('#app')
     }
   });
-  export const db = firebase.firestore();
+    export const db = firebase.firestore();
 
   
 

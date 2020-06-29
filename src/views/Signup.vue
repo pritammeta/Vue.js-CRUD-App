@@ -1,6 +1,6 @@
 <template>
    
-   <div class="login">
+   <div class="container">
       <img alt="Vue logo" src="../assets/logo.png"><br>
             <h2>Let's Create an Account</h2><br>
         <p style="color:red;"> {{ message }}</p>
@@ -48,7 +48,8 @@ export default {
                  ()=> {
 
                   this.message='Creating....';
-                            db.collection("users").add({
+                            db.collection("users").doc(firebase.auth().currentUser.uid).set({
+                              id:firebase.auth().currentUser.uid,
                               name:this.name,
                               email: this.email,
                               number:this.number,
