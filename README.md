@@ -1,6 +1,5 @@
-# Adding User and data to firebase store.
-# vuejsfirebase: Create and adding data is working.
-
+# Login, signup, updating data, deleting data and logout up and running
+ 
 ## Project setup
 ```
 npm install
