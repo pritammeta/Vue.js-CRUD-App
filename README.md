@@ -1,5 +1,5 @@
 # Login, signup, updating data, deleting data and logout up and running
- Output: https://pritammeta.github.io/Vue.js-CRUD-App/.
+ Output: https://vuejs-20350.web.app/#/signin
 ## Project setup
 ```
 npm install
