@@ -1,15 +1,13 @@
-<template>
-   
+<template> 
    <div class="container">
       <img alt="Vue logo" src="../assets/logo.png"><br> 
      <h2>Welcome back !</h2>
       <p style="color:red;">{{ message }}</p>
-      <input type="email" v-model="email"  placeholder="Email" class="form-control" @keyup.enter='login'><br>
-     <input type="password" v-model="password"  placeholder="Password" class="form-control" @keyup.enter='login'><br>
+       <input type="email" v-model="email"  placeholder="Email"><br>
+      <input type="password" v-model="password"  placeholder="Password"><br>
      <button v-on:click="login">Login</button>
       <p>Don't, have account? <router-link to=/signup> Sign up</router-link></p>
-<i class="fa fa-eye"></i>
- </div>
+   </div>
 </template>
 
 <script>
@@ -26,7 +24,7 @@ export default {
     methods: {
         login: function(){
                   this.message='Just wait...';
-
+   
               firebase
               .auth()
               .signInWithEmailAndPassword(this.email,this.password)
@@ -67,9 +65,10 @@ input{
   box-sizing: border-box;
 }
 
- label{
-    text-align: left;
- }
+label{
+        color: black;
+       font-weight: bold;
+  }
 button {
  background-color: #4DAB68;
   color: white;
@@ -80,7 +79,7 @@ button {
   cursor: pointer;}
  
 
-div.login {
+div.container {
    border-radius: 5px;
   background-color: whitesmoke;
   padding: 10px;

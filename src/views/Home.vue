@@ -1,24 +1,24 @@
 <template>
   <div class="container"> 
           <img alt="Vue logo" src="../assets/logo.png"><br>
-          <h3>All Users..</h3>
+          <h3>All Users</h3>
 <table>
   <tr>
     <th>Name</th>
     <th>Email</th>
     <th>Age</th>
     <th>Number</th>
-    <th>Edit</th>
-
+ 
   </tr>
 <tr v-for="employee in locations" v-bind:key="employee.id"> 
     <td>{{employee.name}}</td>
     <td>{{employee.email}}</td>
     <td>{{employee.age}}</td>
    <td>{{employee.number}}</td>
-   <td><router-link to=/edituser><button type="button">Edit</button></router-link></td></tr>
+   </tr>
 </table>
-    <button type="button" class="btn btn-success" v-on:click="logout">Logout</button>
+   <router-link to=/edituser><button type="button"  class="btn btn-warning">Edit</button></router-link>
+   <button type="button" class="btn btn-success" v-on:click="logout">Logout</button>
     </div>
 
    
@@ -37,25 +37,8 @@ export default {
   
 
   created(){
-    // db.collection('users').doc(firebase.auth().currentUser.uid).
-    //           onSnapshot(function(doc){
-
-    //                 console.log('current data:', doc.data())
-    //                   const data = {
-    //         'id': doc.data().id,
-    //         'name': doc.data().name,
-    //         'email': doc.data().email
-            
-    //       }
-    //       this.profile.push(data)
-
-                    
-                 
-
-    //               })
-
-db.collection('users').get().then(querySnapshot =>{querySnapshot.forEach(doc => {
-  const data = {
+     db.collection('users').get().then(querySnapshot =>{querySnapshot.forEach(doc => {
+     const data = {
     'id':doc.data().id,
     name:doc.data().name,
     'email': doc.data().email,
@@ -64,7 +47,7 @@ db.collection('users').get().then(querySnapshot =>{querySnapshot.forEach(doc => 
 
   }
   this.locations.push(data)
-})})
+      })})
 
 
 
@@ -79,6 +62,8 @@ db.collection('users').get().then(querySnapshot =>{querySnapshot.forEach(doc => 
     ()=>
      {
     this.$router.replace('Signin');
+                                    this.$router.go()
+
   });
     }
   }
@@ -114,13 +99,7 @@ ul {
   list-style-type: none;
   padding: 0;
 }
- button {
- background-color: red;
-  color: white;
-  margin: 8px 0;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;}
+ 
 a {
   color: #42b983;
 }

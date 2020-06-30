@@ -62,8 +62,7 @@ export default {
 
                             })  
 
-                                                            //firebase.database().ref('movies').push({name:this.name});
-                                  
+                                   
 
 
                 },

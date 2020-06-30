@@ -38,7 +38,7 @@ import firebase from 'firebase';
     component: () => import(/* webpackChunkName: "about" */ '../views/Signup.vue')
   },
   {
-    path: '/:id',
+    path: '/edituser',
     name: 'Edituser',
     component: () => import(/* webpackChunkName: "about" */ '../views/Edituser.vue')
   }
@@ -49,6 +49,6 @@ router.beforeEach((to,from,next) =>{
 const currentuser=firebase.auth().currentUser;
 const requireauth= to.matched.some(record => record.meta.requireauth);
 if(requireauth && !currentuser) next('/signin');
-else next();
+ else next();
 });
 export default router;
