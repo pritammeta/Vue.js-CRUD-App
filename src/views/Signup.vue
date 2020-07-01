@@ -35,6 +35,14 @@ export default {
             email:null,
             password:null
         };
+    },created(){
+      var vm = this;
+      const currentuser=firebase.auth().currentUser;
+      if(currentuser){
+                                        vm.$router.replace('Home');
+
+      }
+
     },
     methods: {
         signup: function()

@@ -21,7 +21,16 @@ export default {
           password:''
         };
     },
-    methods: {
+    created(){
+      var vm = this;
+      const currentuser=firebase.auth().currentUser;
+      if(currentuser){
+                                        vm.$router.replace('Home');
+
+      }
+
+    },
+        methods: {
         login: function(){
                   this.message='Just wait...';
    

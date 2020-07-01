@@ -1,20 +1,19 @@
 <template>
     <div class="container">
       <img alt="Vue logo" src="../assets/logo.png"><br>
-            <h2>Edit details</h2><br>
-        <p style="color:red;"> {{ message }}</p>
-        <label for="name">Name:</label>
-         <input type="name" v-model="name" placeholder="Full Name"><br>
-         <label for="mobile">Mobile:</label>
-       <input type="mobile" v-model="number" placeholder="Ph. Number"><br>
-                <label for="age">Age:</label>
-              <input type="number" v-model="age" placeholder="Age"><br>
-                       <label for="email">Email:</label>
-
+      <h3>Edit details</h3><br>
+      <p style="color:red;"> {{ message }}</p>
+      <label for="name">Name:</label>
+      <input type="name" v-model="name" placeholder="Full Name"><br>
+      <label for="mobile">Mobile:</label>
+      <input type="mobile" v-model="number" placeholder="Ph. Number"><br>
+      <label for="age">Age:</label>
+      <input type="number" v-model="age" placeholder="Age"><br>
+      <label for="email">Email:</label>
       <input type="email" v-model="email" placeholder="Email"><br>
-           <button class="btn btn-success" v-on:click="updatedata">Update</button>
-            <button class="btn btn-danger" v-on:click="userdelete" >Delete</button>
- <button class="btn btn-info" v-on:click="reloadpage" >Back</button>
+      <button class="btn btn-success" v-on:click="updatedata">Update</button>
+      <button class="btn btn-danger" v-on:click="userdelete" >Delete</button>
+      <button class="btn btn-info" v-on:click="reloadpage" >Back</button>
      </div>
 </template>
 
@@ -36,7 +35,7 @@ export default {
       
       var vm = this;
  // this.$router.push('Home');
-                                this.message='Finished Loading.';
+                                this.message='Hold on !';
                                     firebase.auth().onAuthStateChanged(function(user) {
                                       if (user) {
                                        var uid = user.uid;
@@ -48,7 +47,7 @@ export default {
                                      vm.age=doc.data().age
                                      vm.number=doc.data().number
                                      vm.email= doc.data().email
-                                 
+                                     vm.message='You can edit your details only for the account-"'+vm.email+'"';
 
                                     });
                                      }else{  vm.message='No data found';
@@ -68,9 +67,9 @@ export default {
 
                           }),(error) => {
                               console.error("Error removing document: ", error);
-                          } } 
-});     
-   },
+                          } }             
+                           });     
+                           },
 
 updatedata: function(){
                                         var vm = this;
@@ -93,20 +92,15 @@ updatedata: function(){
                           }),(error) => {
                               console.error("Error removing document: ", error);
                           } } 
-});     
-   },
+                               });     
+                        },
 
-        reloadpage: function(){
+ reloadpage: function(){
                                    this.$router.replace('Home');
-
                                            // this.$router.go()
-
-        }
-
-      }
-    
-  }
-
+                                                 }
+                       } 
+                      }
 </script>
  
 
