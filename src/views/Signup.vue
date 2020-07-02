@@ -109,14 +109,14 @@ input{
     text-align: left;
  }
 button {
- background-color: #4DAB68;
+  background-color: #4DAB68;
   color: white;
+  width: 239px;
   padding: 14px 20px;
   margin: 8px 0;
   border: none;
   border-radius: 4px;
   cursor: pointer;}
- 
 
 div.signup {
     width: 400px;

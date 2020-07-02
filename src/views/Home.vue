@@ -1,7 +1,8 @@
 <template>
   <div class="container"> 
           <img alt="Vue logo" src="../assets/logo.png"><br>
-          <h3>All Users</h3>
+           <h3><router-link to=/edituser><button type="button"  class="btn btn-warning">Edit</button></router-link> All Users    <button type="button" class="btn btn-success" v-on:click="logout">Logout</button>
+</h3>
 <table>
   <tr>
     <th>Name</th>
@@ -17,8 +18,6 @@
    <td>{{employee.number}}</td>
    </tr>
 </table>
-   <router-link to=/edituser><button type="button"  class="btn btn-warning">Edit</button></router-link>
-   <button type="button" class="btn btn-success" v-on:click="logout">Logout</button>
     </div>
 
    

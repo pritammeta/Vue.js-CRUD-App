@@ -1,10 +1,11 @@
 <template>
     <div class="edituser">
       <img alt="Vue logo" src="../assets/logo.png"><br>
-      <h3>Edit details</h3><br>
+      <h3>Edit details <button class="btn btn-info" v-on:click="reloadpage" >Back</button>       <button class="btn btn-danger" v-on:click="userdelete" >Delete</button>
+</h3><br>
       <p style="color:red;"> {{ message }}</p>
       <label for="name">Name:</label>
-      <input type="name" v-model="name" placeholder="Full Name"><br>
+      <input type="name" required v-model="name" placeholder="Full Name"><br>
       <label for="mobile">Mobile:</label>
       <input type="mobile" v-model="number" placeholder="Ph. Number"><br>
       <label for="age">Age:</label>
@@ -12,8 +13,6 @@
       <label for="email">Email:</label>
       <input type="email" v-model="email" placeholder="Email"><br>
       <button class="btn btn-success" v-on:click="updatedata">Update</button>
-      <button class="btn btn-danger" v-on:click="userdelete" >Delete</button>
-      <button class="btn btn-info" v-on:click="reloadpage" >Back</button>
      </div>
 </template>
 
