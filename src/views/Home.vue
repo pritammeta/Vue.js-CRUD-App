@@ -92,14 +92,33 @@ td, th {
 tr:nth-child(even) {
   background-color: #dddddd;
 }
-h3 {
-  margin: 40px 0 0;
-}
+ 
 ul {
   list-style-type: none;
   padding: 0;
 }
- 
+ div.container {
+      margin: auto;
+
+  border-radius: 10px;
+   align-self: center;
+  background-color:whitesmoke;
+     filter: blur(0.4px);
+  box-shadow:
+  /*bottom shadow*/
+  0px 20px 20px rgba(0,0,0,0.2),
+  0px 5px 10px rgba(0,0,0,0.2),
+  /*long bottom shadow*/
+  0px 70px 50px rgba(0,0,0,0.4),
+  /*right shadow*/
+  30px 50px 50px rgba(0,0,0,0.2),
+  /*left shadow*/
+  -30px 50px 50px rgba(0,0,0,0.2),
+  /*right inset*/
+  inset 20px 0px 60px rgba(0,0,0,0.1),
+  /*left inset*/
+  inset -20px 0px 60px rgba(0,0,0,0.1);
+}
 a {
   color: #42b983;
 }

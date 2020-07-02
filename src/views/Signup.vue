@@ -1,6 +1,6 @@
 <template>
    
-   <div class="container">
+   <div class="signup">
       <img alt="Vue logo" src="../assets/logo.png"><br>
             <h2>Let's Create an Account</h2><br>
         <p style="color:red;"> {{ message }}</p>
@@ -118,10 +118,28 @@ button {
   cursor: pointer;}
  
 
-div.login {
-   border-radius: 5px;
-  background-color: whitesmoke;
-  padding: 10px;
+div.signup {
+    width: 400px;
+   height: 600px;
+     margin: auto;
+  border-radius: 10px;
+   align-self: center;
+  background-color:whitesmoke;
+     filter: blur(0.4px);
+  box-shadow:
+  /*bottom shadow*/
+  0px 20px 20px rgba(0,0,0,0.2),
+  0px 5px 10px rgba(0,0,0,0.2),
+  /*long bottom shadow*/
+  0px 70px 50px rgba(0,0,0,0.4),
+  /*right shadow*/
+  30px 50px 50px rgba(0,0,0,0.2),
+  /*left shadow*/
+  -30px 50px 50px rgba(0,0,0,0.2),
+  /*right inset*/
+  inset 20px 0px 60px rgba(0,0,0,0.1),
+  /*left inset*/
+  inset -20px 0px 60px rgba(0,0,0,0.1);;
 }
 p{
     font-size: 12px;

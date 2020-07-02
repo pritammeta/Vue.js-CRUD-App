@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <div class="edituser">
       <img alt="Vue logo" src="../assets/logo.png"><br>
       <h3>Edit details</h3><br>
       <p style="color:red;"> {{ message }}</p>
@@ -133,10 +133,29 @@ button {
   cursor: pointer;}
  
 
-div.container {
-   border-radius: 5px;
-  background-color: whitesmoke;
-   padding: 10px;
+div.edituser {
+    width: 400px;
+   height: 540px;
+     margin: auto;
+
+  border-radius: 10px;
+   align-self: center;
+  background-color:whitesmoke;
+     filter: blur(0.4px);
+  box-shadow:
+  /*bottom shadow*/
+  0px 20px 20px rgba(0,0,0,0.2),
+  0px 5px 10px rgba(0,0,0,0.2),
+  /*long bottom shadow*/
+  0px 70px 50px rgba(0,0,0,0.4),
+  /*right shadow*/
+  30px 50px 50px rgba(0,0,0,0.2),
+  /*left shadow*/
+  -30px 50px 50px rgba(0,0,0,0.2),
+  /*right inset*/
+  inset 20px 0px 60px rgba(0,0,0,0.1),
+  /*left inset*/
+  inset -20px 0px 60px rgba(0,0,0,0.1);
 }
 p{
     font-size: 12px;
